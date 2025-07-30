@@ -1,25 +1,44 @@
 "use client"
 
-import { toaster } from "@/components/ui/toaster"
+import { useToast } from "@chakra-ui/react"
+import { toaster } from "@/shared/components/ui/toaster"
 
-const useCustomToast = () => {
-  const showSuccessToast = (description: string) => {
-    toaster.create({
-      title: "Success!",
-      description,
-      type: "success",
+export function useCustomToast() {
+  const toast = useToast()
+
+  const showSuccess = (message: string) => {
+    toast({
+      title: "成功",
+      description: message,
+      status: "success",
+      duration: 3000,
+      isClosable: true,
     })
   }
 
-  const showErrorToast = (description: string) => {
-    toaster.create({
-      title: "Something went wrong!",
-      description,
-      type: "error",
+  const showError = (message: string) => {
+    toast({
+      title: "エラー",
+      description: message,
+      status: "error",
+      duration: 5000,
+      isClosable: true,
     })
   }
 
-  return { showSuccessToast, showErrorToast }
+  const showInfo = (message: string) => {
+    toast({
+      title: "情報",
+      description: message,
+      status: "info",
+      duration: 3000,
+      isClosable: true,
+    })
+  }
+
+  return {
+    showSuccess,
+    showError,
+    showInfo,
+  }
 }
-
-export default useCustomToast

@@ -10,6 +10,7 @@ export const system = createSystem(defaultConfig, {
       fontSize: "0.875rem",
       margin: 0,
       padding: 0,
+      color: "#3F3F3F",
     },
     ".main-link": {
       color: "ui.main",
@@ -20,7 +21,21 @@ export const system = createSystem(defaultConfig, {
     tokens: {
       colors: {
         ui: {
-          main: { value: "#009688" },
+          main: { value: "#EF671F" },
+          text: { value: "#3F3F3F" },
+          "text-secondary": { value: "#656565" },
+        },
+        brand: {
+          50: { value: "#FFF5F0" },
+          100: { value: "#FFE6D6" },
+          200: { value: "#FFCCAD" },
+          300: { value: "#FFB284" },
+          400: { value: "#FF995B" },
+          500: { value: "#EF671F" },
+          600: { value: "#E55A1A" },
+          700: { value: "#DB4D15" },
+          800: { value: "#D14010" },
+          900: { value: "#C7330B" },
         },
       },
     },
